@@ -750,9 +750,11 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clean builds folder
+        if: needs.fetch-info.outputs.build_type == 'release'
         run: rm -rf build/web
 
       - name: Download Artifacts Web
+        if: needs.fetch-info.outputs.build_type == 'release'
         uses: actions/download-artifact@v4
         with:
           name: fladder-web-pages
