@@ -6,6 +6,7 @@ on:
       - "v*"
     branches:
       - master
+      - test/open-jellyfin-qc-link
   pull_request:
     paths:
       - pubspec.yaml
@@ -34,6 +35,7 @@ concurrency:
 
 env:
   NIGHTLY_TAG: nightly
+  FVP_DEPS_URL: https://github.com/wang-bin/mdk-sdk/releases/download/v0.35.1
 
 jobs:
   # Check if workflow should run based on trigger conditions
@@ -708,9 +710,10 @@ jobs:
     name: Release Web
     needs:
       - fetch-info
+      - build-web
       - create_release
     runs-on: ubuntu-latest
-    if: needs.fetch-info.outputs.build_type == 'release'
+    if: always() && !failure() && !cancelled() && (needs.fetch-info.outputs.build_type == 'release' || needs.fetch-info.outputs.build_type == 'development')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4.1.1
@@ -725,7 +728,8 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: fladder
-          addLatest: true
+          tags: test-open-jellyfin-qc-link
+          addLatest: false
           multiPlatform: true
           platform: linux/amd64,linux/arm64,linux/arm/v7
           registry: ghcr.io
@@ -737,7 +741,8 @@ jobs:
         with:
           dockerfile: Dockerfile-rootless
           image: fladder-rootless
-          addLatest: true
+          tags: test-open-jellyfin-qc-link
+          addLatest: false
           multiPlatform: true
           platform: linux/amd64,linux/arm64,linux/arm/v7
           registry: ghcr.io
@@ -754,6 +759,7 @@ jobs:
           path: build/web
 
       - name: Deploy to GitHub Pages
+        if: needs.fetch-info.outputs.build_type == 'release'
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
