@@ -44,6 +44,7 @@ mixin _$ClientSettingsModel implements DiagnosticableTreeMixin {
   bool get usePosterForLibrary;
   bool get useSystemIME;
   bool get useTVExpandedLayout;
+  bool get hidePasswordLogin;
   String? get lastViewedUpdate;
   int? get libraryPageSize;
   Map<GlobalHotKeys, KeyCombination> get shortcuts;
@@ -96,6 +97,7 @@ mixin _$ClientSettingsModel implements DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('usePosterForLibrary', usePosterForLibrary))
       ..add(DiagnosticsProperty('useSystemIME', useSystemIME))
       ..add(DiagnosticsProperty('useTVExpandedLayout', useTVExpandedLayout))
+      ..add(DiagnosticsProperty('hidePasswordLogin', hidePasswordLogin))
       ..add(DiagnosticsProperty('lastViewedUpdate', lastViewedUpdate))
       ..add(DiagnosticsProperty('libraryPageSize', libraryPageSize))
       ..add(DiagnosticsProperty('shortcuts', shortcuts));
@@ -103,7 +105,7 @@ mixin _$ClientSettingsModel implements DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClientSettingsModel(syncPath: $syncPath, transcodeDownloadModel: $transcodeDownloadModel, position: $position, size: $size, timeOut: $timeOut, nextUpDateCutoff: $nextUpDateCutoff, updateNotificationsInterval: $updateNotificationsInterval, themeMode: $themeMode, themeColor: $themeColor, deriveColorsFromItem: $deriveColorsFromItem, amoledBlack: $amoledBlack, blurPlaceHolders: $blurPlaceHolders, blurUpcomingEpisodes: $blurUpcomingEpisodes, selectedLocale: $selectedLocale, enableMediaKeys: $enableMediaKeys, posterSize: $posterSize, pinchPosterZoom: $pinchPosterZoom, mouseDragSupport: $mouseDragSupport, requireWifi: $requireWifi, expandSideBar: $expandSideBar, showAllCollectionTypes: $showAllCollectionTypes, maxConcurrentDownloads: $maxConcurrentDownloads, schemeVariant: $schemeVariant, backgroundImage: $backgroundImage, enableBlurEffects: $enableBlurEffects, checkForUpdates: $checkForUpdates, usePosterForLibrary: $usePosterForLibrary, useSystemIME: $useSystemIME, useTVExpandedLayout: $useTVExpandedLayout, lastViewedUpdate: $lastViewedUpdate, libraryPageSize: $libraryPageSize, shortcuts: $shortcuts)';
+    return 'ClientSettingsModel(syncPath: $syncPath, transcodeDownloadModel: $transcodeDownloadModel, position: $position, size: $size, timeOut: $timeOut, nextUpDateCutoff: $nextUpDateCutoff, updateNotificationsInterval: $updateNotificationsInterval, themeMode: $themeMode, themeColor: $themeColor, deriveColorsFromItem: $deriveColorsFromItem, amoledBlack: $amoledBlack, blurPlaceHolders: $blurPlaceHolders, blurUpcomingEpisodes: $blurUpcomingEpisodes, selectedLocale: $selectedLocale, enableMediaKeys: $enableMediaKeys, posterSize: $posterSize, pinchPosterZoom: $pinchPosterZoom, mouseDragSupport: $mouseDragSupport, requireWifi: $requireWifi, expandSideBar: $expandSideBar, showAllCollectionTypes: $showAllCollectionTypes, maxConcurrentDownloads: $maxConcurrentDownloads, schemeVariant: $schemeVariant, backgroundImage: $backgroundImage, enableBlurEffects: $enableBlurEffects, checkForUpdates: $checkForUpdates, usePosterForLibrary: $usePosterForLibrary, useSystemIME: $useSystemIME, useTVExpandedLayout: $useTVExpandedLayout, hidePasswordLogin: $hidePasswordLogin, lastViewedUpdate: $lastViewedUpdate, libraryPageSize: $libraryPageSize, shortcuts: $shortcuts)';
   }
 }
 
@@ -143,6 +145,7 @@ abstract mixin class $ClientSettingsModelCopyWith<$Res> {
       bool usePosterForLibrary,
       bool useSystemIME,
       bool useTVExpandedLayout,
+      bool hidePasswordLogin,
       String? lastViewedUpdate,
       int? libraryPageSize,
       Map<GlobalHotKeys, KeyCombination> shortcuts});
@@ -192,6 +195,7 @@ class _$ClientSettingsModelCopyWithImpl<$Res>
     Object? usePosterForLibrary = null,
     Object? useSystemIME = null,
     Object? useTVExpandedLayout = null,
+    Object? hidePasswordLogin = null,
     Object? lastViewedUpdate = freezed,
     Object? libraryPageSize = freezed,
     Object? shortcuts = null,
@@ -312,6 +316,10 @@ class _$ClientSettingsModelCopyWithImpl<$Res>
       useTVExpandedLayout: null == useTVExpandedLayout
           ? _self.useTVExpandedLayout
           : useTVExpandedLayout // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hidePasswordLogin: null == hidePasswordLogin
+          ? _self.hidePasswordLogin
+          : hidePasswordLogin // ignore: cast_nullable_to_non_nullable
               as bool,
       lastViewedUpdate: freezed == lastViewedUpdate
           ? _self.lastViewedUpdate
@@ -463,6 +471,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             bool usePosterForLibrary,
             bool useSystemIME,
             bool useTVExpandedLayout,
+            bool hidePasswordLogin,
             String? lastViewedUpdate,
             int? libraryPageSize,
             Map<GlobalHotKeys, KeyCombination> shortcuts)?
@@ -502,6 +511,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             _that.usePosterForLibrary,
             _that.useSystemIME,
             _that.useTVExpandedLayout,
+            _that.hidePasswordLogin,
             _that.lastViewedUpdate,
             _that.libraryPageSize,
             _that.shortcuts);
@@ -555,6 +565,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             bool usePosterForLibrary,
             bool useSystemIME,
             bool useTVExpandedLayout,
+            bool hidePasswordLogin,
             String? lastViewedUpdate,
             int? libraryPageSize,
             Map<GlobalHotKeys, KeyCombination> shortcuts)
@@ -593,6 +604,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             _that.usePosterForLibrary,
             _that.useSystemIME,
             _that.useTVExpandedLayout,
+            _that.hidePasswordLogin,
             _that.lastViewedUpdate,
             _that.libraryPageSize,
             _that.shortcuts);
@@ -645,6 +657,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             bool usePosterForLibrary,
             bool useSystemIME,
             bool useTVExpandedLayout,
+            bool hidePasswordLogin,
             String? lastViewedUpdate,
             int? libraryPageSize,
             Map<GlobalHotKeys, KeyCombination> shortcuts)?
@@ -683,6 +696,7 @@ extension ClientSettingsModelPatterns on ClientSettingsModel {
             _that.usePosterForLibrary,
             _that.useSystemIME,
             _that.useTVExpandedLayout,
+            _that.hidePasswordLogin,
             _that.lastViewedUpdate,
             _that.libraryPageSize,
             _that.shortcuts);
@@ -726,6 +740,7 @@ class _ClientSettingsModel extends ClientSettingsModel
       this.usePosterForLibrary = false,
       this.useSystemIME = false,
       this.useTVExpandedLayout = false,
+      this.hidePasswordLogin = false,
       this.lastViewedUpdate,
       this.libraryPageSize,
       final Map<GlobalHotKeys, KeyCombination> shortcuts = const {}})
@@ -818,6 +833,9 @@ class _ClientSettingsModel extends ClientSettingsModel
   @JsonKey()
   final bool useTVExpandedLayout;
   @override
+  @JsonKey()
+  final bool hidePasswordLogin;
+  @override
   final String? lastViewedUpdate;
   @override
   final int? libraryPageSize;
@@ -883,6 +901,7 @@ class _ClientSettingsModel extends ClientSettingsModel
       ..add(DiagnosticsProperty('usePosterForLibrary', usePosterForLibrary))
       ..add(DiagnosticsProperty('useSystemIME', useSystemIME))
       ..add(DiagnosticsProperty('useTVExpandedLayout', useTVExpandedLayout))
+      ..add(DiagnosticsProperty('hidePasswordLogin', hidePasswordLogin))
       ..add(DiagnosticsProperty('lastViewedUpdate', lastViewedUpdate))
       ..add(DiagnosticsProperty('libraryPageSize', libraryPageSize))
       ..add(DiagnosticsProperty('shortcuts', shortcuts));
@@ -890,7 +909,7 @@ class _ClientSettingsModel extends ClientSettingsModel
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ClientSettingsModel.internal(syncPath: $syncPath, transcodeDownloadModel: $transcodeDownloadModel, position: $position, size: $size, timeOut: $timeOut, nextUpDateCutoff: $nextUpDateCutoff, updateNotificationsInterval: $updateNotificationsInterval, themeMode: $themeMode, themeColor: $themeColor, deriveColorsFromItem: $deriveColorsFromItem, amoledBlack: $amoledBlack, blurPlaceHolders: $blurPlaceHolders, blurUpcomingEpisodes: $blurUpcomingEpisodes, selectedLocale: $selectedLocale, enableMediaKeys: $enableMediaKeys, posterSize: $posterSize, pinchPosterZoom: $pinchPosterZoom, mouseDragSupport: $mouseDragSupport, requireWifi: $requireWifi, expandSideBar: $expandSideBar, showAllCollectionTypes: $showAllCollectionTypes, maxConcurrentDownloads: $maxConcurrentDownloads, schemeVariant: $schemeVariant, backgroundImage: $backgroundImage, enableBlurEffects: $enableBlurEffects, checkForUpdates: $checkForUpdates, usePosterForLibrary: $usePosterForLibrary, useSystemIME: $useSystemIME, useTVExpandedLayout: $useTVExpandedLayout, lastViewedUpdate: $lastViewedUpdate, libraryPageSize: $libraryPageSize, shortcuts: $shortcuts)';
+    return 'ClientSettingsModel.internal(syncPath: $syncPath, transcodeDownloadModel: $transcodeDownloadModel, position: $position, size: $size, timeOut: $timeOut, nextUpDateCutoff: $nextUpDateCutoff, updateNotificationsInterval: $updateNotificationsInterval, themeMode: $themeMode, themeColor: $themeColor, deriveColorsFromItem: $deriveColorsFromItem, amoledBlack: $amoledBlack, blurPlaceHolders: $blurPlaceHolders, blurUpcomingEpisodes: $blurUpcomingEpisodes, selectedLocale: $selectedLocale, enableMediaKeys: $enableMediaKeys, posterSize: $posterSize, pinchPosterZoom: $pinchPosterZoom, mouseDragSupport: $mouseDragSupport, requireWifi: $requireWifi, expandSideBar: $expandSideBar, showAllCollectionTypes: $showAllCollectionTypes, maxConcurrentDownloads: $maxConcurrentDownloads, schemeVariant: $schemeVariant, backgroundImage: $backgroundImage, enableBlurEffects: $enableBlurEffects, checkForUpdates: $checkForUpdates, usePosterForLibrary: $usePosterForLibrary, useSystemIME: $useSystemIME, useTVExpandedLayout: $useTVExpandedLayout, hidePasswordLogin: $hidePasswordLogin, lastViewedUpdate: $lastViewedUpdate, libraryPageSize: $libraryPageSize, shortcuts: $shortcuts)';
   }
 }
 
@@ -932,6 +951,7 @@ abstract mixin class _$ClientSettingsModelCopyWith<$Res>
       bool usePosterForLibrary,
       bool useSystemIME,
       bool useTVExpandedLayout,
+      bool hidePasswordLogin,
       String? lastViewedUpdate,
       int? libraryPageSize,
       Map<GlobalHotKeys, KeyCombination> shortcuts});
@@ -982,6 +1002,7 @@ class __$ClientSettingsModelCopyWithImpl<$Res>
     Object? usePosterForLibrary = null,
     Object? useSystemIME = null,
     Object? useTVExpandedLayout = null,
+    Object? hidePasswordLogin = null,
     Object? lastViewedUpdate = freezed,
     Object? libraryPageSize = freezed,
     Object? shortcuts = null,
@@ -1102,6 +1123,10 @@ class __$ClientSettingsModelCopyWithImpl<$Res>
       useTVExpandedLayout: null == useTVExpandedLayout
           ? _self.useTVExpandedLayout
           : useTVExpandedLayout // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hidePasswordLogin: null == hidePasswordLogin
+          ? _self.hidePasswordLogin
+          : hidePasswordLogin // ignore: cast_nullable_to_non_nullable
               as bool,
       lastViewedUpdate: freezed == lastViewedUpdate
           ? _self.lastViewedUpdate

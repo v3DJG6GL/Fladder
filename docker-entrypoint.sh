@@ -21,12 +21,14 @@ else
 fi
 
 SEERR_PROXY_JSON=$([ -n "$SEERR_PROXY_PATH" ] && echo "\"$SEERR_PROXY_PATH\"" || echo null)
+HIDE_PW_VAL=$([ "$HIDE_PASSWORD_LOGIN" = "true" ] && echo true || echo null)
 
 cat > "$CONFIG" <<EOF
 {
   "baseUrl": "$BASE_URL",
   "seerrBaseUrl": "$SEERR_BASE_URL",
-  "seerrProxyPath": $SEERR_PROXY_JSON
+  "seerrProxyPath": $SEERR_PROXY_JSON,
+  "hidePasswordLogin": $HIDE_PW_VAL
 }
 EOF
 

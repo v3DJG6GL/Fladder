@@ -50,6 +50,9 @@ class AuthNotifier extends StateNotifier<LoginScreenModel> {
         await setServer(url);
       }
     }
+    if (FladderConfig.hidePasswordLogin == true) {
+      state = state.copyWith(hidePasswordLogin: true);
+    }
     state = state.copyWith(
       accounts: currentAccounts,
       screen: currentAccounts.isEmpty ? LoginScreenType.login : LoginScreenType.users,

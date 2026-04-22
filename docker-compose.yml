@@ -13,3 +13,4 @@ services:
       # /seerr-proxy/ is not authenticated by Fladder, so an X-Api-Key would let any HTTP caller act as a Seerr admin.
       - SEERR_HEADER={"key":"value"} #OPTIONAL: JSON headers injected server-side via nginx proxy (requires SEERR_BASE_URL)
       - FLADDER_WEBPATH=/ #OPTIONAL: Configures a subpath to run Fladder at
+      - HIDE_PASSWORD_LOGIN= #OPTIONAL: Set to "true" to hide password fields and only show QuickConnect

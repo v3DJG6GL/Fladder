@@ -14,6 +14,10 @@ class FladderConfig {
   static set seerrProxyPath(String? value) => _instance._seerrProxyPath = value;
   String? _seerrProxyPath;
 
+  static bool? get hidePasswordLogin => _instance._hidePasswordLogin;
+  static set hidePasswordLogin(bool? value) => _instance._hidePasswordLogin = value;
+  bool? _hidePasswordLogin;
+
   static void fromJson(Map<String, dynamic> json) => _instance = FladderConfig._fromJson(json);
 
   factory FladderConfig._fromJson(Map<String, dynamic> json) {
@@ -21,6 +25,7 @@ class FladderConfig {
     config._baseUrl = _nonEmpty(json['baseUrl'] as String?);
     config._seerrBaseUrl = _nonEmpty(json['seerrBaseUrl'] as String?);
     config._seerrProxyPath = _nonEmpty(json['seerrProxyPath'] as String?);
+    config._hidePasswordLogin = json['hidePasswordLogin'] as bool?;
     return config;
   }
 
