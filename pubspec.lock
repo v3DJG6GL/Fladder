@@ -1327,9 +1327,9 @@ packages:
     dependency: "direct overridden"
     description:
       path: "libs/windows/media_kit_libs_windows_video"
-      ref: HEAD
-      resolved-ref: "34bde583caa800bf2beb06ec6287c943eda24296"
-      url: "https://github.com/DonutWare/media-kit.git"
+      ref: fix/windows-mpv-dev-url-bump
+      resolved-ref: "069090f9adfbbbbb50268d8dee643051011c2f12"
+      url: "https://github.com/v3DJG6GL/media-kit.git"
     source: git
     version: "1.0.11"
   media_kit_video:
