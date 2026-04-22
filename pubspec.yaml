@@ -174,8 +174,11 @@ dependency_overrides:
       url: https://github.com/DonutWare/media-kit.git
       path: libs/macos/media_kit_libs_macos_video
   media_kit_libs_windows_video:
+    # TEMP: pinned to fork with bumped mpv-dev URL while DonutWare PR #1 is pending.
+    # Revert to DonutWare/media-kit once https://github.com/DonutWare/media-kit/pull/1 is merged.
     git:
-      url: https://github.com/DonutWare/media-kit.git
+      url: https://github.com/v3DJG6GL/media-kit.git
+      ref: fix/windows-mpv-dev-url-bump
       path: libs/windows/media_kit_libs_windows_video
   media_kit_libs_linux:
     git:
